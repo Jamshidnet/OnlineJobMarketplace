@@ -1,0 +1,55 @@
+﻿
+Microsoft Visual Studio Solution File, Format Version 12.00
+# Visual Studio Version 17
+VisualStudioVersion = 17.6.33712.159
+MinimumVisualStudioVersion = 10.0.40219.1
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "OnlineJobMarketplace.WebAPI", "OnlineJobMarketplace\OnlineJobMarketplace.WebAPI.csproj", "{11E07D85-1F28-469A-912A-91272677ACD3}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "OnlineJobMarketplace.Domein", "Domein\OnlineJobMarketplace.Domein.csproj", "{F30CB9F8-53B4-48DF-93EE-0A8D8687C7E4}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "OnlineJobMarketplace.Infrustructure", "Infrustructure\OnlineJobMarketplace.Infrustructure.csproj", "{33D23E17-E12D-4F60-8782-082508FEA47A}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "OnlineJobMarketplace.Application", "Application\OnlineJobMarketplace.Application.csproj", "{5C70D552-B4F7-4F94-BED9-1415A6D6F56F}"
+EndProject
+Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "readme", "readme", "{19188A6A-8AA3-47B2-AD6B-334A551D240E}"
+EndProject
+Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "src", "src", "{15788530-7AA9-41EE-B9C8-0D408B39E335}"
+EndProject
+Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "tests", "tests", "{0AF44A14-3F60-4C98-B005-E78FBE85BA2F}"
+EndProject
+Global
+	GlobalSection(SolutionConfigurationPlatforms) = preSolution
+		Debug|Any CPU = Debug|Any CPU
+		Release|Any CPU = Release|Any CPU
+	EndGlobalSection
+	GlobalSection(ProjectConfigurationPlatforms) = postSolution
+		{11E07D85-1F28-469A-912A-91272677ACD3}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{11E07D85-1F28-469A-912A-91272677ACD3}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{11E07D85-1F28-469A-912A-91272677ACD3}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{11E07D85-1F28-469A-912A-91272677ACD3}.Release|Any CPU.Build.0 = Release|Any CPU
+		{F30CB9F8-53B4-48DF-93EE-0A8D8687C7E4}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{F30CB9F8-53B4-48DF-93EE-0A8D8687C7E4}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{F30CB9F8-53B4-48DF-93EE-0A8D8687C7E4}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{F30CB9F8-53B4-48DF-93EE-0A8D8687C7E4}.Release|Any CPU.Build.0 = Release|Any CPU
+		{33D23E17-E12D-4F60-8782-082508FEA47A}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{33D23E17-E12D-4F60-8782-082508FEA47A}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{33D23E17-E12D-4F60-8782-082508FEA47A}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{33D23E17-E12D-4F60-8782-082508FEA47A}.Release|Any CPU.Build.0 = Release|Any CPU
+		{5C70D552-B4F7-4F94-BED9-1415A6D6F56F}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{5C70D552-B4F7-4F94-BED9-1415A6D6F56F}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{5C70D552-B4F7-4F94-BED9-1415A6D6F56F}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{5C70D552-B4F7-4F94-BED9-1415A6D6F56F}.Release|Any CPU.Build.0 = Release|Any CPU
+	EndGlobalSection
+	GlobalSection(SolutionProperties) = preSolution
+		HideSolutionNode = FALSE
+	EndGlobalSection
+	GlobalSection(NestedProjects) = preSolution
+		{11E07D85-1F28-469A-912A-91272677ACD3} = {15788530-7AA9-41EE-B9C8-0D408B39E335}
+		{F30CB9F8-53B4-48DF-93EE-0A8D8687C7E4} = {15788530-7AA9-41EE-B9C8-0D408B39E335}
+		{33D23E17-E12D-4F60-8782-082508FEA47A} = {15788530-7AA9-41EE-B9C8-0D408B39E335}
+		{5C70D552-B4F7-4F94-BED9-1415A6D6F56F} = {15788530-7AA9-41EE-B9C8-0D408B39E335}
+	EndGlobalSection
+	GlobalSection(ExtensibilityGlobals) = postSolution
+		SolutionGuid = {7CA160B4-E53C-45A8-B4EF-499EC96BA66F}
+	EndGlobalSection
+EndGlobal
