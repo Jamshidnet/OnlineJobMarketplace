@@ -44,7 +44,7 @@ public class UpdateCompanyCommandHandler : IRequestHandler<UpdateCompanyCommand,
     {
         Company company = await FilterIfCompanyExsists(request.Id);
 
-        company = _mapper.Map<Company>(request);
+         _mapper.Map(request, company);
 
         _dbContext.Companies.Update(company);
         await _dbContext.SaveChangesAsync(cancellationToken);

@@ -20,7 +20,7 @@ namespace OnlineJobMarketplace.Domein.Entities
 
         public DateTime Birthdate { get; set; }
 
-        public string ImageName { get; set; }
+        public string? ImageName { get; set; }
         public string PhoneNumber { get; set; }
         public decimal ExperienceDuration { get; set; }
 

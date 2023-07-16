@@ -34,7 +34,7 @@ public class UpdateSubmissionCommandHandler : IRequestHandler<UpdateSubmissionCo
     {
         Submission submission = await FilterIfSubmissionExsists(request.Id);
 
-        submission = _mapper.Map<Submission>(request);
+        _mapper.Map(request, submission);
 
         _dbContext.Submissions.Update(submission);
         await _dbContext.SaveChangesAsync(cancellationToken);

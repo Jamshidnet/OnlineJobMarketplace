@@ -1,4 +1,5 @@
 ﻿using AutoMapper;
+using AutoMapper.Internal.Mappers;
 using MediatR;
 using OnlineJobMarketplace.Application.Common.Exceptions;
 using OnlineJobMarketplace.Application.Common.Interfaces;
@@ -30,7 +31,6 @@ public class UpdateSkillCommandHandler : IRequestHandler<UpdateSkillCommand, Ski
     {
         Skill skill =  FilterIfSkillExsists(request.Id);
 
-        //skill = _mapper.Map<Skill>(request);
         skill.SkillName=request.SkillName;
 
         _dbContext.Skills.Update(skill);

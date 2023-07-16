@@ -15,7 +15,7 @@ namespace OnlineJobMarketplace.Infrustructure.Persistence
        public DbSet<Skill> Skills { get;set; }
        public DbSet<Submission> Submissions { get;set; }
 
-
+   
         private readonly AuditableEntitySaveChangesInterceptor _interceptor;
 
 
@@ -31,7 +31,6 @@ namespace OnlineJobMarketplace.Infrustructure.Persistence
 
         protected override void OnModelCreating(ModelBuilder modelBuilder)
         {
-
             modelBuilder.ApplyConfigurationsFromAssembly(
                 Assembly.GetExecutingAssembly());
 

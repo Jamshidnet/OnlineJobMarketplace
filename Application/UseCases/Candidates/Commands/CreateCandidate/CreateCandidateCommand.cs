@@ -28,7 +28,7 @@ public record CreateCandidateCommand : IRequest<CandidateDtoWithSkills>
 
     public string Education { get; set; }
 
-    public IFormFile ImageFile { get; set; }
+    public IFormFile? ImageFile { get; set; }
     public Gender Gender { get; set; }
     public ICollection<Guid> Skills { get; set; }
 }

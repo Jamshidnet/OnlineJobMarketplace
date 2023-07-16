@@ -35,7 +35,7 @@ public class UpdateJobCommandHandler : IRequestHandler<UpdateJobCommand, JobWith
         Job job = await FilterIfJobExsists(request.Id);
         IEnumerable<Skill> skills = FilterifSkillIdsAreAvialible(request.RequiredSkills);
 
-        job= _mapper.Map<Job>(request);
+        _mapper.Map(request, job);
         job.RequiredSkills = skills.ToList();
 
         _dbContext.Jobs.Update(job);
@@ -53,7 +53,7 @@ public class UpdateJobCommandHandler : IRequestHandler<UpdateJobCommand, JobWith
 
     private async Task<Job> FilterIfJobExsists(Guid id)
     {
-        Job? job = await _dbContext.Jobs.Include("Skills")
+        Job? job = await _dbContext.Jobs
             .FirstOrDefaultAsync(x => x.Id == id);
 
         return job

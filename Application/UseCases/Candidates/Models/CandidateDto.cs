@@ -16,7 +16,7 @@ namespace OnlineJobMarketplace.Application.UseCases.Students.Models
         public string PhoneNumber { get; set; }
         public decimal ExperienceDuration { get; set; }
 
-        public string ImageName { get; set; }
+        public string? ImageName { get; set; }
 
         public IFormFile? ImageFile { get; set; }
 

@@ -24,10 +24,11 @@ public class UpdateCandidateCommand : IRequest<CandidateDtoWithSkills>
     public DateTime Birthdate { get; set; }
 
 
-    [RegularExpression(@"^\+998(33|9[0-9])\d{7}$", ErrorMessage = " Invalid PhoneNumber style. ")]
+    [RegularExpression(@"^\+998(33|9[0-9])\d{7}$",
+        ErrorMessage = " Invalid PhoneNumber style. ")]
     public string PhoneNumber { get; set; }
     public decimal ExperienceDuration { get; set; }
-    public IFormFile ImageFile { get; set; }
+    public IFormFile? ImageFile { get; set; }
     public string Education { get; set; }
 
     public Gender Gender { get; set; }
@@ -49,14 +50,12 @@ public class UpdateCandidateCommandHandler : IRequestHandler<UpdateCandidateComm
     {
         Candidate candidate = await FilterIfCandidateExsists(request.Id);
         IEnumerable<Skill> skills = FilterifSkillIdsAreAvialible(request.Skills);
-
-         candidate = _mapper.Map<Candidate>(request);
+        candidate.ImageName = SaveImage(request.ImageFile?? null);
+       _mapper.Map(request, candidate);
         candidate.Skills = skills.ToArray();
-        candidate.ImageName = SaveImage(request.ImageFile);
-
         _dbContext.Candidates.Update(candidate);
         await _dbContext.SaveChangesAsync(cancellationToken);
-
+        
         return _mapper.Map<CandidateDtoWithSkills>(candidate);
     }
 
@@ -77,12 +76,12 @@ public class UpdateCandidateCommandHandler : IRequestHandler<UpdateCandidateComm
             ?? throw new NotFoundException(
                 " there is no candidate with this id. ");
     }
-    private string SaveImage(IFormFile imageFile)
+    private static string? SaveImage(IFormFile? imageFile)
     {
-        if (imageFile == null || imageFile.Length == 0)
+        if (imageFile is null)
         {
             // Image fayli mavjud emas yoki bo'sh
-            return string.Empty;
+            return null;
         }
 
         string uniqueFileName = Guid.NewGuid().ToString() + "_" + imageFile.FileName;
